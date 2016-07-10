@@ -10,7 +10,7 @@ module.exports = {
   devtool: 'source-map',
   entry: './src/index',
   output: {
-    path: path.join(__dirname, '..', 'server', 'public'),
+    path: path.join(__dirname, 'static'),
     filename: 'bundle.js',
     publicPath: '/static/',
   },
