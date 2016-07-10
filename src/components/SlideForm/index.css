@@ -1,0 +1,24 @@
+.container {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+:global(.form-control) {
+  width: 90%;
+}
+
+.left {
+  flex: 0 1 calc(100% * 2 / 5);
+}
+
+.mid {
+  flex: 0 1 calc(100% * 3 / 5);
+}
+
+.right {
+  flex: 0 1 auto;
+
+  padding-top: 25px;
+}

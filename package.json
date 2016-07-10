@@ -1,0 +1,94 @@
+{
+  "name": "slideshow-input",
+  "description": "An input UI for creating autoplay slideshow.",
+  "version": "0.0.1",
+  "author": "tw0517tw",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tw0517tw/slideshow-input.git"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.7",
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-dev-expression": "^0.2.1",
+    "babel-plugin-transform-remove-console": "^6.8.0",
+    "babel-plugin-transform-remove-debugger": "^6.8.0",
+    "babel-plugin-webpack-loaders": "^0.7.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-react-optimize": "^1.0.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.9.0",
+    "chai": "^3.5.0",
+    "chai-enzyme": "^0.5.0",
+    "cross-env": "^1.0.8",
+    "css-loader": "^0.23.1",
+    "dirty-chai": "^1.2.2",
+    "enzyme": "^2.3.0",
+    "eslint": "^3.0.0",
+    "eslint-config-yoctol": "^0.6.2",
+    "eslint-plugin-import": "^1.10.1",
+    "eslint-plugin-jsx-a11y": "^1.5.3",
+    "eslint-plugin-react": "^5.2.2",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "immutable": "^3.8.1",
+    "json-loader": "^0.5.4",
+    "minimist": "^1.2.0",
+    "mocha": "^2.5.3",
+    "nyc": "^6.6.1",
+    "postcss-loader": "^0.9.1",
+    "postcss-nested": "^1.0.0",
+    "postcss-simple-vars": "^3.0.0",
+    "react-addons-test-utils": "^15.2.0",
+    "rimraf": "^2.5.2",
+    "sinon": "^1.17.4",
+    "sinon-chai": "^2.8.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "classnames": "^2.2.5",
+    "react": "^15.2.0",
+    "react-addons-shallow-compare": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "react-slick": "^0.12.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "clean": "rimraf lib dist coverage",
+    "lint": "eslint *.js src scripts",
+    "testonly": "node scripts/testonly.js",
+    "testonly:watch": "npm run testonly -- --watch",
+    "test": "npm run lint && npm run testonly",
+    "test:cov": "nyc npm test",
+    "check": "npm run lint && npm run test ",
+    "build": "cross-env NODE_ENV=production webpack src/index.js --config webpack.config.prod.js",
+    "preversion": "npm run clean && npm run check",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags && npm run clean",
+    "prepublish": "npm run clean && npm run build",
+    "postinstall": "node node_modules/fbjs-scripts/node/check-dev-engines.js package.json"
+  },
+  "devEngines": {
+    "node": "4.x || 5.x || 6.x",
+    "npm": "2.x || 3.x"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/tw0517tw/slideshow-input/issues"
+  },
+  "homepage": "http://tw0517tw.github.io/slideshow-input"
+}
